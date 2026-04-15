@@ -3,20 +3,12 @@ import os
 
 
 def limpiar_pantalla():
-    """
-    Limpia la pantalla de la terminal.
-    Funciona tanto en Windows como en Mac/Linux.
-    """
-    os.system('cls' if os.name == 'nt' else 'clear')
+    # Limpiamos pantalla para evitar que se acumulen cosas y se vea más limpio
+    os.system('cls' if os.name == 'nt' else 'clear') # esto nos permite que sea compatible (creo que esta correcto)
 
 
 def mostrar_turno(turno):
-    """
-    Muestra de quién es el turno actual.
-
-    Args:
-        turno (str): 'jugador' o 'cpu'
-    """
+    # Mostramos de quién es el turno actual
     if turno == "jugador":
         print(messages["player_turn"])
     else:
@@ -24,12 +16,7 @@ def mostrar_turno(turno):
 
 
 def pedir_coordenadas():
-    """
-    Pide al jugador que introduzca coordenadas de disparo.
-
-    Returns:
-        tuple: (fila, columna) como enteros validados.
-    """
+    # Pedimos al usuario que introduzca las coordenadas del disparo
     while True:
         try:
             fila = int(input("Introduce fila (0-9): "))
@@ -43,17 +30,8 @@ def pedir_coordenadas():
 
 
 def validar_disparo(fila, columna, disparos_previos):
-    """
-    Valida que el disparo no haya sido realizado antes.
-
-    Args:
-        fila (int): Fila del disparo.
-        columna (int): Columna del disparo.
-        disparos_previos (list): Lista de tuplas con disparos anteriores.
-
-    Returns:
-        bool: True si el disparo es válido, False si ya se disparó ahí.
-    """
+    # Validamos que el disparo no haya sido realizado antes, para evitar que el jugador o la CPU disparen a la misma coordenada más de una vez.
+    # True si el disparo es válido, False si ya se disparó ahí.
     if (fila, columna) in disparos_previos:
         print(messages["already_shot"])
         return False
@@ -61,12 +39,7 @@ def validar_disparo(fila, columna, disparos_previos):
 
 
 def mostrar_resultado(resultado):
-    """
-    Muestra el resultado de un disparo.
-
-    Args:
-        resultado (str): 'hit', 'miss' o 'sunk'
-    """
+    # Mostramos el resultado del disparo (hit, miss o sunk).
     if resultado == "hit":
         print(messages["shot"])
     elif resultado == "miss":
