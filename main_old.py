@@ -1,5 +1,5 @@
 from Clases.clases import Tablero
-from funciones.funciones import turno_cpu, turno_jugador, comprobar_victoria
+from funciones import turno_cpu, turno_jugador, comprobar_victoria
 from Variables.variables import messages
 from auxiliar import limpiar_pantalla
 

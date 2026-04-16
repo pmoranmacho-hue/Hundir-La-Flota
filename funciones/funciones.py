@@ -7,13 +7,12 @@ Funciones auxiliares para Hundir la Flota:
 - Impresión de tableros
 """
 
-from variables import (
+from Variables.variables import (
     messages,
-    simbolo_hit, simbolo_miss, simbolo_sunk,
-    simbolo_empty, simbolo_ship,
+    simbolo_hit, simbolo_miss, simbolo_sunk, simbolo_empty , simbolo_ship,
 )
 
-from clases import Tablero, CeldaYaDisparadaError
+from Clases.clases import Tablero, CeldaYaDisparadaError
 
 
 def imprimir_tablero(tablero, titulo: str | None = None) -> None:
