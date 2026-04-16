@@ -2,7 +2,7 @@ import numpy as np
 import random
 
 
-from variables.fichero import (
+from variables import (
    board_size, ships,
    simbolo_empty, simbolo_ship,
    simbolo_hit, simbolo_miss, simbolo_sunk
