@@ -1,7 +1,7 @@
 import os
 
 from Clases.clases import Tablero
-from Funciones import disparo_cpu, disparo_jugador, mostrar_estado_juego, verificar_ganador
+from Funciones.funciones import disparo_cpu, disparo_jugador, mostrar_estado_juego, verificar_ganador
 from Variables.variables import messages
 
 
